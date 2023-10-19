@@ -9,13 +9,15 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "~3.11"
 commitizen = "^3.12.0"
+pre-commit = "^3.5.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.commitizen]
+version = "0.1.0"
 version_scheme = "semver"
 tag_format = "v$major"
-version = "0.1.0"
 changelog_incremental = true
+update_changelog_on_bump = true
