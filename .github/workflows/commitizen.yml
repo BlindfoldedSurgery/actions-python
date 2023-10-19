@@ -18,7 +18,6 @@ jobs:
       - run: poetry install --all-extras --no-interaction --no-ansi
       - name: Bump version
         run: |
-          git status
           poetry run cz bump; EXIT_CODE="$?"
           case $EXIT_CODE in
           21)
