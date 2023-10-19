@@ -18,10 +18,10 @@ jobs:
       - run: poetry install --all-extras --no-interaction --no-ansi
       - name: Bump version
         run: |
-          set -e
+          set +e
           poetry run cz bump
           EXIT_CODE="$?"
-          set +e
+          set -e
 
           case $EXIT_CODE in
           21)
