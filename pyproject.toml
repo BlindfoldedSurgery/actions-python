@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "actions-python"
 description = "GitHub Actions Workflows for Python"
-version = "0.5.1"
+version = "1.0.0"
 authors = ["BlindfoldedSurgery <team@blindfolded.surgery>"]
 license = "MIT"
 readme = "README.md"
