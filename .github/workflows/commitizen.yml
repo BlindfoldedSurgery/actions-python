@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    concurrency: release
+    container: python:3.11-slim-bookworm
+    steps:
+      - run: pip install poetry==1.6.1
+      - uses: actions/checkout@v4
+      - run: poetry install --all-extras --no-interaction --no-ansi
+      - run: poetry run cz bump
+      - run: |
+          MAJOR_VERSION=$(poetry version --short | cut -d. -f1 -)
+          git tag "v$MAJOR_VERSION"
