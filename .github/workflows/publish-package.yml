@@ -20,7 +20,7 @@ on:
         required: true
 
 jobs:
-  lint:
+  publish-package:
     runs-on: ubuntu-latest
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
