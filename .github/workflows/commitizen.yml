@@ -16,6 +16,9 @@ jobs:
         with:
           fetch-depth: '0'
       - run: poetry install --all-extras --no-interaction --no-ansi
+      - run: |
+          git config --global user.name "commitizen"
+          git config --global user.email "commitizen@blindfolded.surgery"
       - name: Bump version
         run: |
           set +e
