@@ -19,6 +19,7 @@ jobs:
       - name: Bump version
         run: |
           poetry run cz bump; EXIT_CODE="$?"
+          echo "Exit with code $EXIT_CODE"
           case $EXIT_CODE in
           21)
             exit 0;;
