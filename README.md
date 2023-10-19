@@ -6,7 +6,7 @@ The project follows semantic versioning. You can depend on tags for specific ver
 major version tag (e.g. `v1`).
 
 Every commit on the main branch leads to a new release. Releases are managed by
-[commitizen][commitizen], which relies on [conventional commits]. To make sure you don't
+[commitizen][commitizen], which relies on [conventional commits][ccommit]. To make sure you don't
 accidentally create commits with an unconventional message, install a pre-commit hook using
 `make pre-commit`.
 
