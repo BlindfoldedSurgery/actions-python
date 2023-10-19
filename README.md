@@ -46,3 +46,28 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 | Name            |           Required           | Description                                                 |
 |:----------------|:----------------------------:|-------------------------------------------------------------|
 | `CODECOV_TOKEN` | if `submit-coverage` is true | The codecov.io token to use for coverage report submission. |
+
+### publish-package
+
+Build a package using Poetry and publish it to a custom repository.
+
+Example `poetry.toml`:
+```toml
+[repositories.pypi-bs]
+url = " https://pypi.blindfolded.surgery/"
+```
+
+**Inputs:**
+
+| Name           | Required |  Default   |     Example      | Description                                                  |
+|:---------------|:--------:|:----------:|:----------------:|--------------------------------------------------------------|
+| python-version |   yes    |            |      `3.11`      | The Python version to use                                    |
+| debian-version |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container                    |
+| pypi-username  |   yes    |            | `mycoolusername` | The username for your custom pypi repository.                |
+| repo-name      |    no    | `pypi-bs`  |                  | The repo name as configured in your project's `poetry.toml`. |
+
+**Secrets:**
+
+| Name            | Required | Description                                   |
+|:----------------|:--------:|-----------------------------------------------|
+| `pypi-password` |   yes    | The password for your custom pypi repository. |

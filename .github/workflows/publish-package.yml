@@ -1,0 +1,38 @@
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      debian-version:
+        required: false
+        type: string
+        default: bookworm
+      pypi-username:
+        required: true
+        type: string
+      repo-name:
+        required: false
+        type: string
+        default: pypi-bs
+    secrets:
+      pypi-password:
+        required: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
+    steps:
+      - name: Install Poetry
+        run: pip install poetry==1.6.1
+      - uses: actions/checkout@v4
+      - name: Build project
+        run: poetry build
+      - name: Set credentials
+        run: |
+          poetry config "http-basic.${{ inputs.repo-name }}" \
+          "${{ inputs.pypi-username }}" \
+          "${{ secrets.pypi-password }}"
+      - name: Upload to pypi registry
+        run: poetry publish -r ${{ inputs.repo-name }}
