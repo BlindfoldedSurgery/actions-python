@@ -10,6 +10,7 @@ jobs:
     container: python:3.11-slim-bookworm
     steps:
       - run: pip install poetry==1.6.1
+      - run: apt-get update -qq && apt-get install -y --no-install-recommends git
       - uses: actions/checkout@v4
         with:
           fetch-depth: '0'
