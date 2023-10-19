@@ -5,6 +5,15 @@ This repository contains a set of reusable workflows geared towards Python proje
 The project follows semantic versioning. You can depend on tags for specific versions of use a
 major version tag (e.g. `v1`).
 
+Every commit on the main branch leads to a new release. Releases are managed by
+[commitizen][commitizen], which relies on [conventional commits]. To make sure you don't
+accidentally create commits with an unconventional message, install a pre-commit hook using
+`make pre-commit`.
+
+[commitizen]: https://commitizen-tools.github.io/commitizen/
+
+[ccommit]: https://www.conventionalcommits.org/en/v1.0.0/
+
 ## Example
 
 ```yaml
@@ -52,6 +61,7 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 Build a package using Poetry and publish it to a custom repository.
 
 Example `poetry.toml`:
+
 ```toml
 [repositories.pypi-bs]
 url = " https://pypi.blindfolded.surgery/"
