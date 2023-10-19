@@ -7,7 +7,7 @@ on:
       debian-version:
         required: false
         type: string
-        default: bookwork
+        default: bookworm
 
 jobs:
   lint:
