@@ -18,8 +18,11 @@ jobs:
       - run: poetry install --all-extras --no-interaction --no-ansi
       - name: Bump version
         run: |
-          $(poetry run cz bump); EXIT_CODE="$?"
-          echo "Exit with code $EXIT_CODE"
+          set -e
+          poetry run cz bump
+          EXIT_CODE="$?"
+          set +e
+
           case $EXIT_CODE in
           21)
             exit 0;;
