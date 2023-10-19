@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.5.0 (2023-10-19)
+
+### Feat
+
+- Add publish-package workflow
+
 ## v0.4.0 (2023-10-19)
 
 ### Feat
