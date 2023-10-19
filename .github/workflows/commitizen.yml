@@ -7,10 +7,11 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     concurrency: release
-    container: python:3.11-slim-bookworm
     steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
       - run: pip install poetry==1.6.1
-      - run: apt-get update -qq && apt-get install -y --no-install-recommends git
       - uses: actions/checkout@v4
         with:
           fetch-depth: '0'
