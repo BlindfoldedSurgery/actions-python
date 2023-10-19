@@ -1,0 +1,42 @@
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      debian-version:
+        required: false
+        type: string
+        default: bookworm
+      submit-coverage:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      CODECOV_TOKEN:
+        required: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
+    steps:
+      - name: Install Poetry
+        run: pip install poetry==1.6.1
+      - uses: actions/checkout@v4
+      - run: poetry install --all-extras
+      - name: Run tests
+        if: '!inputs.submit-coverage'
+        run: poetry run pytest
+      - name: Run tests with coverage
+        if: inputs.submit-coverage
+        run: poetry run pytest --cov src/
+      - name: Convert Python coverage file format to XML
+        if: inputs.submit-coverage
+        run: poetry run coverage xml
+      - name: Upload coverage reports to Codecov
+        if: inputs.submit-coverage
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
