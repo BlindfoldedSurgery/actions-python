@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0 (2023-10-21)
+
+### Feat
+
+- Introduce build-image-docker workflow
+
 ## v1.0.0 (2023-10-19)
 
 Same as v0.5.1.
