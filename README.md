@@ -56,6 +56,18 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 |:----------------|:----------------------------:|-------------------------------------------------------------|
 | `CODECOV_TOKEN` | if `submit-coverage` is true | The codecov.io token to use for coverage report submission. |
 
+### build-image-docker
+
+Build a container image using Docker and optionally publish it to the repo's container registry.
+
+The current commit's SHA-digest is passed to the build as a build-arg called `APP_VERSION`.
+
+**Inputs:**
+
+| Name       | Required | Default |    Example     | Description                                                    |
+|:-----------|:--------:|:-------:|:--------------:|----------------------------------------------------------------|
+| push-image |   yes    |         | `true`/`false` | Whether to push the resulting container image to the registry. |
+
 ### publish-package
 
 Build a package using Poetry and publish it to a custom repository.
