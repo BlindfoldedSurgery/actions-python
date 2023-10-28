@@ -6,5 +6,7 @@ on:
 jobs:
   commitizen:
     uses: BlindfoldedSurgery/actions-actions/.github/workflows/commitizen.yml@v1
+    with:
+      publish-major-tag: true
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
