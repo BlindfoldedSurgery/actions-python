@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.1 (2023-10-28)
+
+### Fix
+
+- **ci**: Publish major tag
+- **ci**: Reference workflow version
+- **ci**: Reference actual reusable workflow
+- **ci**: Use reusable workflow
+
 ## v1.1.0 (2023-10-21)
 
 ### Feat
