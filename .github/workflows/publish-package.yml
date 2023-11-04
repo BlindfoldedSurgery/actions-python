@@ -25,7 +25,7 @@ jobs:
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
       - name: Install Poetry
-        run: pip install poetry==1.6.1
+        run: pip install poetry==1.7.0
       - uses: actions/checkout@v4
       - name: Build project
         run: poetry build
