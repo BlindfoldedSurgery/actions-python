@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.1 (2023-11-11)
+
+### Fix
+
+- Revert usage of prebuilt Poetry image because of permission issues
+
 ## v1.2.0 (2023-11-11)
 
 ### Feat
