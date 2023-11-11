@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0 (2023-11-11)
+
+### Feat
+
+- Use container image with prebuilt Poetry
+
 ## v1.1.1 (2023-10-28)
 
 ### Fix
