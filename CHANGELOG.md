@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3.0 (2024-01-13)
+
+### Feat
+
+- Add input to customize lint path
+- Add input to customize test location
+
 ## v1.2.1 (2023-11-11)
 
 ### Fix
