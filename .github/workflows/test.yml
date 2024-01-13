@@ -12,6 +12,10 @@ on:
         required: false
         type: boolean
         default: false
+      tests-location:
+        required: false
+        type: string
+        default: src/
     secrets:
       CODECOV_TOKEN:
         required: false
@@ -30,7 +34,7 @@ jobs:
         run: poetry run pytest
       - name: Run tests with coverage
         if: inputs.submit-coverage
-        run: poetry run pytest --cov src/
+        run: poetry run pytest --cov ${{ inputs.tests-location }}
       - name: Convert Python coverage file format to XML
         if: inputs.submit-coverage
         run: poetry run coverage xml

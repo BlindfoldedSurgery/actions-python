@@ -49,6 +49,7 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 | python-version  |   yes    |            |     `3.11`     | The Python version to use                                                                     |
 | debian-version  |    no    | `bookworm` |   `bullseye`   | The Debian version name for the container                                                     |
 | submit-coverage |    no    |  `false`   | `true`/`false` | Whether to collect and submit the coverage report. Requires the CODECOV_TOKEN secret as well. |
+| tests-location  |    no    |   `src/`   |    `tests/`    | The path to your tests that is used for the pytest invocation.                                |
 
 **Secrets:**
 
