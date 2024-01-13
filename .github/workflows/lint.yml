@@ -8,6 +8,10 @@ on:
         required: false
         type: string
         default: bookworm
+      context-path:
+        required: false
+        type: string
+        default: src/
 
 jobs:
   lint:
@@ -20,6 +24,6 @@ jobs:
       - run: poetry install --all-extras
       - name: Check coding standards
         run: |
-          poetry run ruff check src/
-          poetry run black --check src/
-          poetry run mypy src/
+          poetry run ruff check ${{ inputs.context-path }}
+          poetry run black --check ${{ inputs.context-path }}
+          poetry run mypy ${{ inputs.context-path }}
