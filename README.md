@@ -32,10 +32,11 @@ Lints a Poetry project using black, ruff and mypy.
 
 **Inputs:**
 
-| Name           | Required |  Default   |  Example   | Description                               |
-|:---------------|:--------:|:----------:|:----------:|-------------------------------------------|
-| python-version |   yes    |            |   `3.11`   | The Python version to use                 |
-| debian-version |    no    | `bookworm` | `bullseye` | The Debian version name for the container |
+| Name           | Required |  Default   |     Example      | Description                                        |
+|:---------------|:--------:|:----------:|:----------------:|----------------------------------------------------|
+| python-version |   yes    |            |      `3.11`      | The Python version to use                          |
+| debian-version |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container          |
+| context-path   |    no    |   `src/`   | `.`/`mypackage/` | The path that is passed to linting tools to check. |
 
 ### test
 
