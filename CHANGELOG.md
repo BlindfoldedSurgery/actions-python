@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.2 (2024-05-10)
+
+### Fix
+
+- **test**: Upload Coverage reports in a separate job
+
 ## v1.3.1 (2024-04-06)
 
 ### Fix
