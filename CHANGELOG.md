@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.0 (2024-06-30)
+
+### Feat
+
+- Check formatting with ruff
+
 ## v1.3.2 (2024-05-10)
 
 ### Fix
