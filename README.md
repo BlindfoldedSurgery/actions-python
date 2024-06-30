@@ -28,7 +28,7 @@ jobs:
 
 ### lint
 
-Lints a Poetry project using black, ruff and mypy.
+Lints a Poetry project using ruff and mypy.
 
 **Inputs:**
 
