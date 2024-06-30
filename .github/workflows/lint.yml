@@ -24,6 +24,6 @@ jobs:
       - run: poetry install --all-extras
       - name: Check coding standards
         run: |
+          poetry run ruff format --check ${{ inputs.context-path }}
           poetry run ruff check ${{ inputs.context-path }}
-          poetry run black --check ${{ inputs.context-path }}
           poetry run mypy ${{ inputs.context-path }}
