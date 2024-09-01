@@ -16,6 +16,9 @@ on:
         required: false
         type: string
         default: src/
+      tests-selector:
+        required: false
+        type: string
     secrets:
       CODECOV_TOKEN:
         required: false
@@ -31,7 +34,7 @@ jobs:
       - run: poetry install --all-extras
       - name: Run tests
         if: '!inputs.submit-coverage'
-        run: poetry run pytest
+        run: poetry run pytest {{ inputs.tests-selector && format('-m "{0}"', inputs.tests-selector) || '' }}
       - name: Run tests with coverage
         if: inputs.submit-coverage
         run: poetry run pytest --cov ${{ inputs.tests-location }}
