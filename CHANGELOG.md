@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.2 (2024-09-01)
+
+### Fix
+
+- Honor tests-selector if coverage is enabled
+
 ## v2.1.1 (2024-09-01)
 
 ### Fix
