@@ -34,7 +34,7 @@ jobs:
       - run: poetry install --all-extras
       - name: Run tests
         if: '!inputs.submit-coverage'
-        run: poetry run pytest {{ inputs.tests-selector && format('-m "{0}"', inputs.tests-selector) || '' }}
+        run: poetry run pytest {{ inputs.tests-selector && format('-m "{0}"', inputs.tests-selector) || '' }} ${{ inputs.tests-location }}
       - name: Run tests with coverage
         if: inputs.submit-coverage
         run: poetry run pytest --cov ${{ inputs.tests-location }}
