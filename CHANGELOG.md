@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.1.0 (2024-09-01)
+
+### Feat
+
+- Allow selecting specific tests for execution
+
+### Fix
+
+- Honor custom test location if no coverage is used
+
 ## v2.0.0 (2024-06-30)
 
 ### Feat
