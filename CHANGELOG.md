@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.1 (2024-09-01)
+
+### Fix
+
+- Add missing dollar-sign in GitHub Actions expression
+
 ## v2.1.0 (2024-09-01)
 
 ### Feat
