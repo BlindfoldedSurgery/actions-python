@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.3 (2024-10-06)
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4
+
 ## v2.1.2 (2024-09-01)
 
 ### Fix
