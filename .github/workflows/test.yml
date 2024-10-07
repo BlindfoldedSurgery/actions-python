@@ -47,10 +47,9 @@ jobs:
           
           while IFS= read -r line
           do
-            echo "::add-mask::$line"
-          
             if [ -n "$line" ]
             then
+              echo "::add-mask::$line"
               value=$(echo "$line" | cut -d"=" -f2-)
               echo "::add-mask::$value"
           
