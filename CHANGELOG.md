@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.4 (2024-10-07)
+
+### Fix
+
+- Ignore empty lines
+
 ## v2.2.3 (2024-10-07)
 
 ### Fix
