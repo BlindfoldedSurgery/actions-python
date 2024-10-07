@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.2 (2024-10-07)
+
+### Fix
+
+- Explicitly request bash shell
+
 ## v2.2.1 (2024-10-07)
 
 ### Fix
