@@ -37,6 +37,7 @@ jobs:
       - name: Export secrets as environment
         env:
           INPUT_VARS: ${{ secrets.ENVIRONMENT_VARIABLES }}
+        shell: bash
         run: |
           if [ -z "$INPUT_VARS" ]
           then
