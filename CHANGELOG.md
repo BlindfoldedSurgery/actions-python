@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.3 (2024-10-07)
+
+### Fix
+
+- Revert base64 decoding change
+
 ## v2.2.2 (2024-10-07)
 
 ### Fix
