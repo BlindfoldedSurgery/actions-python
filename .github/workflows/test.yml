@@ -20,6 +20,8 @@ on:
         required: false
         type: string
     secrets:
+      ENVIRONMENT_VARIABLES:
+        required: false
       CODECOV_TOKEN:
         required: false
 
@@ -32,6 +34,28 @@ jobs:
         run: pip install poetry==1.8.3
       - uses: actions/checkout@v4
       - run: poetry install --all-extras
+      - name: Export secrets as environment
+        env:
+          INPUT_VARS: ${{ secrets.ENVIRONMENT_VARIABLES }}
+        run: |
+          if [ -z "$INPUT_VARS" ]
+          then
+            echo "No env vars given."
+            exit 0
+          fi
+          
+          while IFS= read -r line
+          do
+            echo "::add-mask::$line"
+          
+            if [ -n "$line" ]
+            then
+              value=$(echo "$line" | cut -d"=" -f2-)
+              echo "::add-mask::$value"
+          
+              echo "$line" >> "$GITHUB_ENV"
+            fi
+          done <<< "$INPUT_VARS"
       - name: Run tests
         run: poetry run pytest ${{ inputs.tests-selector && format('-m "{0}"', inputs.tests-selector) || '' }} ${{ inputs.submit-coverage && '--cov' || '' }} ${{ inputs.tests-location }}
       - name: Convert Python coverage file format to XML
