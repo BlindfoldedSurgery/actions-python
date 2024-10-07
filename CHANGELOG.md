@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.0 (2024-10-07)
+
+### Feat
+
+- **test**: Accept env vars
+
 ## v2.1.3 (2024-10-06)
 
 ### Fix
