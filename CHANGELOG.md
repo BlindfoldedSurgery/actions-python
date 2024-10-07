@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.1 (2024-10-07)
+
+### Fix
+
+- Decode env vars
+
 ## v2.2.0 (2024-10-07)
 
 ### Feat
