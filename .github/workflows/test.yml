@@ -50,10 +50,15 @@ jobs:
           
             if [ -n "$line" ]
             then
-              value=$(echo "$line" | cut -d"=" -f2-)
+              key=$(echo "$line" | cut -d"=" -f1)
+              
+              enc_value=$(echo "$line" | cut -d"=" -f2-)
+              echo "::add-mask::$enc_value"
+          
+              value=$(echo "$enc_value" | base64 -d)
               echo "::add-mask::$value"
           
-              echo "$line" >> "$GITHUB_ENV"
+              echo "$key=$value" >> "$GITHUB_ENV"
             fi
           done <<< "$INPUT_VARS"
       - name: Run tests
