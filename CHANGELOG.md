@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.5 (2024-10-14)
+
+### Fix
+
+- **deps**: update dependency poetry to v1.8.4
+
 ## v2.2.4 (2024-10-07)
 
 ### Fix
