@@ -7,12 +7,12 @@ jobs:
   check:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v2
     with:
-      python-version: "3.12"
+      python-version: "3.13"
 
   bump:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v2
     with:
       publish-major-tag: true
-      python-version: "3.12"
+      python-version: "3.13"
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
