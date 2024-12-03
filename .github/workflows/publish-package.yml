@@ -21,7 +21,7 @@ on:
 
 jobs:
   publish-package:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
       - name: Install Poetry
