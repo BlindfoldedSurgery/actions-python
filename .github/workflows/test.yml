@@ -27,7 +27,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
       - name: Install Poetry
@@ -70,7 +70,7 @@ jobs:
           overwrite: true
 
   upload-coverage-report:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [ test ]
     if: inputs.submit-coverage
     steps:
