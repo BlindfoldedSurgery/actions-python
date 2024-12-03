@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.3.0 (2024-12-03)
+
+### Feat
+
+- Update runner image to ubuntu-24.04
+
 ## v2.2.5 (2024-10-14)
 
 ### Fix
