@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.4.3 (2024-12-04)
+
+### Fix
+
+- Install all extras with uv
+
 ## v2.4.2 (2024-12-04)
 
 ### Fix
