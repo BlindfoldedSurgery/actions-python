@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.4.1 (2024-12-04)
+
+### Fix
+
+- Install pipx before using it
+
 ## v2.4.0 (2024-12-04)
 
 ### Feat
