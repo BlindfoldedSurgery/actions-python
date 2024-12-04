@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.4.0 (2024-12-04)
+
+### Feat
+
+- Support uv as build tool
+
 ## v2.3.0 (2024-12-03)
 
 ### Feat
