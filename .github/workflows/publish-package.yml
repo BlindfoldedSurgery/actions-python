@@ -28,7 +28,9 @@ jobs:
     runs-on: ubuntu-24.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
-      - run: pip install 'pipx==1.7.*'
+      - run: |
+          pip install 'pipx==1.7.*'
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - run: pipx install poetry==1.8.4
         if: inputs.build-tool == 'poetry'
       - run: pipx install uv==0.5.6
