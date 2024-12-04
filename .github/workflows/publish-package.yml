@@ -38,7 +38,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: poetry install --all-extras --no-interaction --no-ansi
         if: inputs.build-tool == 'poetry'
-      - run: uv sync
+      - run: uv sync --all-extras
         if: inputs.build-tool == 'uv'
       - name: Build project
         run: ${{ inputs.build-tool }} build
