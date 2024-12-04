@@ -1,6 +1,10 @@
 on:
   workflow_call:
     inputs:
+      build-tool:
+        type: string
+        required: false
+        default: poetry
       python-version:
         required: true
         type: string
@@ -18,12 +22,17 @@ jobs:
     runs-on: ubuntu-24.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
-      - name: Install Poetry
-        run: pip install poetry==1.8.4
+      - run: pipx install poetry==1.8.4
+        if: inputs.build-tool == 'poetry'
+      - run: pipx install uv==0.5.6
+        if: inputs.build-tool == 'uv'
       - uses: actions/checkout@v4
-      - run: poetry install --all-extras
+      - run: poetry install --all-extras --no-interaction --no-ansi
+        if: inputs.build-tool == 'poetry'
+      - run: uv sync
+        if: inputs.build-tool == 'uv'
       - name: Check coding standards
         run: |
-          poetry run ruff format --check ${{ inputs.context-path }}
-          poetry run ruff check ${{ inputs.context-path }}
-          poetry run mypy ${{ inputs.context-path }}
+          ${{ inputs.build-tool }} run ruff format --check ${{ inputs.context-path }}
+          ${{ inputs.build-tool }} run ruff check ${{ inputs.context-path }}
+          ${{ inputs.build-tool }} run mypy ${{ inputs.context-path }}
