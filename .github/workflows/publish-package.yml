@@ -1,6 +1,10 @@
 on:
   workflow_call:
     inputs:
+      build-tool:
+        type: string
+        required: false
+        default: poetry
       python-version:
         required: true
         type: string
@@ -24,15 +28,28 @@ jobs:
     runs-on: ubuntu-24.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     steps:
-      - name: Install Poetry
-        run: pip install poetry==1.8.4
+      - run: pipx install poetry==1.8.4
+        if: inputs.build-tool == 'poetry'
+      - run: pipx install uv==0.5.6
+        if: inputs.build-tool == 'uv'
       - uses: actions/checkout@v4
+      - run: poetry install --all-extras --no-interaction --no-ansi
+        if: inputs.build-tool == 'poetry'
+      - run: uv sync
+        if: inputs.build-tool == 'uv'
       - name: Build project
-        run: poetry build
-      - name: Set credentials
+        run: ${{ inputs.build-tool }} build
+      - name: Upload to pypi registry
+        if: inputs.build-tool == 'poetry'
         run: |
           poetry config "http-basic.${{ inputs.repo-name }}" \
           "${{ inputs.pypi-username }}" \
           "${{ secrets.pypi-password }}"
+          poetry publish -r ${{ inputs.repo-name }}
       - name: Upload to pypi registry
-        run: poetry publish -r ${{ inputs.repo-name }}
+        if: inputs.build-tool == 'uv'
+        env:
+          UV_PUBLISH_USERNAME: ${{ inputs.pypi-username }}
+          UV_PUBLISH_PASSWORD: ${{ secrets.pypi-password }}
+        run: |
+          uv publish
