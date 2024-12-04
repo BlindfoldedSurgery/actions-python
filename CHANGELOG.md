@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.4.2 (2024-12-04)
+
+### Fix
+
+- Ensure pipx package are in PATH
+
 ## v2.4.1 (2024-12-04)
 
 ### Fix
