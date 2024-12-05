@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.5.1 (2024-12-05)
+
+### Fix
+
+- Use correct uv version
+
 ## v2.5.0 (2024-12-05)
 
 ### Feat
