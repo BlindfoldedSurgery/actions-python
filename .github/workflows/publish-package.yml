@@ -30,7 +30,7 @@ jobs:
     env:
       # renovate: datasource=pypi depName=pipx
       PIPX_VERSION: "==1.7.*"
-      # renovate: datasource=github-releases depName=uv lookupName=astral-sh/uv
+      # renovate: datasource=pypi depName=uv versioning=semver-coerced
       UV_VERSION: 0.5.6
     steps:
       - run: |
