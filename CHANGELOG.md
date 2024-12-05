@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.5.0 (2024-12-05)
+
+### Feat
+
+- Use setup action for uv
+
 ## v2.4.3 (2024-12-04)
 
 ### Fix
