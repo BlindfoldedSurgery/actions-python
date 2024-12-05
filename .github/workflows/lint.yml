@@ -25,7 +25,7 @@ jobs:
       # renovate: datasource=pypi depName=pipx
       PIPX_VERSION: 1.7.*
       # renovate: datasource=pypi depName=uv
-      UV_VERSION: 1.7.*
+      UV_VERSION: 0.5.6
     steps:
       - run: |
           pip install "pipx==${PIPX_VERSION}"
