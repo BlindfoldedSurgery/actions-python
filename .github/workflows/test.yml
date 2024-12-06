@@ -43,7 +43,7 @@ jobs:
           pip install "pipx${PIPX_VERSION}"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
         if: inputs.build-tool == 'poetry'
-      - run: pipx install poetry==1.8.4
+      - run: pipx install poetry==1.8.5
         if: inputs.build-tool == 'poetry'
       - name: Install uv
         if: inputs.build-tool == 'uv'
