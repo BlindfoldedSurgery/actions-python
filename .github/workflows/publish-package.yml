@@ -41,7 +41,7 @@ jobs:
         if: inputs.build-tool == 'poetry'
       - name: Install uv
         if: inputs.build-tool == 'uv'
-        uses: astral-sh/setup-uv@v4
+        uses: astral-sh/setup-uv@v5
         with:
           version: ${{ env.UV_VERSION }}
       - uses: actions/checkout@v4
