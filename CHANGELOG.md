@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.1 (2024-12-20)
+
+### Fix
+
+- checkout repo before installing uv
+
 ## v3.0.0 (2024-12-20)
 
 ### Feat
