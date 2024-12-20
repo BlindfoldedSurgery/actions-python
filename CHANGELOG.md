@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.0 (2024-12-20)
+
+### Feat
+
+- **deps**: update astral-sh/setup-uv action to v5
+
 ## v2.5.7 (2024-12-20)
 
 ### Fix
