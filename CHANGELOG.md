@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.0 (2024-12-21)
+
+### Feat
+
+- Add inputs to control cache behavior
+
 ## v3.0.1 (2024-12-20)
 
 ### Fix
