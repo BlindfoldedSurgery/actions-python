@@ -37,6 +37,7 @@ Lints a Poetry project using ruff and mypy.
 | python-version |   yes    |            |      `3.11`      | The Python version to use                          |
 | debian-version |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container          |
 | context-path   |    no    |   `src/`   | `.`/`mypackage/` | The path that is passed to linting tools to check. |
+| build-tool     |    no    |  `poetry`  |  `poetry`, `uv`  | The build/packaging tool to use for the project.   |
 
 ### test
 
@@ -51,25 +52,14 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 | debian-version  |    no    | `bookworm` |    `bullseye`     | The Debian version name for the container                                                     |
 | submit-coverage |    no    |  `false`   |  `true`/`false`   | Whether to collect and submit the coverage report. Requires the CODECOV_TOKEN secret as well. |
 | tests-location  |    no    |   `src/`   |     `tests/`      | The path to your tests that is used for the pytest invocation.                                |
-| tests-selector  |    no    |            | `not integration` | A pytest marker selection expression                                                          |                                                          
+| tests-selector  |    no    |            | `not integration` | A pytest marker selection expression                                                          |
+| build-tool      |    no    |  `poetry`  |  `poetry`, `uv`   | The build/packaging tool to use for the project.                                              |
 
 **Secrets:**
 
 | Name            |           Required           | Description                                                 |
 |:----------------|:----------------------------:|-------------------------------------------------------------|
 | `CODECOV_TOKEN` | if `submit-coverage` is true | The codecov.io token to use for coverage report submission. |
-
-### build-image-docker
-
-Build a container image using Docker and optionally publish it to the repo's container registry.
-
-The current commit's SHA-digest is passed to the build as a build-arg called `APP_VERSION`.
-
-**Inputs:**
-
-| Name       | Required | Default |    Example     | Description                                                    |
-|:-----------|:--------:|:-------:|:--------------:|----------------------------------------------------------------|
-| push-image |   yes    |         | `true`/`false` | Whether to push the resulting container image to the registry. |
 
 ### publish-package
 
@@ -90,6 +80,7 @@ url = " https://pypi.blindfolded.surgery/"
 | debian-version |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container                    |
 | pypi-username  |   yes    |            | `mycoolusername` | The username for your custom pypi repository.                |
 | repo-name      |    no    | `pypi-bs`  |                  | The repo name as configured in your project's `poetry.toml`. |
+| build-tool     |    no    |  `poetry`  |  `poetry`, `uv`  | The build/packaging tool to use for the project.             |
 
 **Secrets:**
 
