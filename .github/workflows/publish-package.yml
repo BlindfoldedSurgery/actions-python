@@ -5,6 +5,13 @@ on:
         type: string
         required: false
         default: poetry
+      cache-enabled:
+        required: false
+        type: boolean
+        default: true
+      cache-key-suffix:
+        required: false
+        type: string
       python-version:
         required: true
         type: string
@@ -44,6 +51,8 @@ jobs:
         if: inputs.build-tool == 'uv'
         uses: astral-sh/setup-uv@v5
         with:
+          cache-suffix: ${{ inputs.cache-key-suffix }}
+          enable-cache: ${{ inputs.cache-enabled }}
           version: ${{ env.UV_VERSION }}
       - run: poetry install --all-extras --no-interaction --no-ansi
         if: inputs.build-tool == 'poetry'
