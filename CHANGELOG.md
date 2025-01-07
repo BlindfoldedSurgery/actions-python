@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.2.0 (2025-01-07)
+
+### Feat
+
+- Allow tool version choice
+
 ## v3.1.3 (2025-01-07)
 
 ### Fix
