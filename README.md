@@ -1,9 +1,9 @@
 # actions-python
 
-This repository contains a set of reusable workflows geared towards Python projects using Poetry.
+This repository contains a set of reusable workflows geared towards Python projects using Poetry or uv.
 
-The project follows semantic versioning. You can depend on tags for specific versions of use a
-major version tag (e.g. `v1`).
+The project follows semantic versioning. You can depend on tags for specific versions (e.g. `v1.0.0`, `v3.1.3`)
+or a major version tag (e.g. `v1`, `v3`).
 
 Every commit on the main branch leads to a new release. Releases are managed by
 [commitizen][commitizen], which relies on [conventional commits][ccommit]. To make sure you don't
