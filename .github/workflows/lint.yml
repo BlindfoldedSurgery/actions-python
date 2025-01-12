@@ -15,6 +15,10 @@ on:
       cache-key-suffix:
         required: false
         type: string
+      check-lockfile-exists:
+        required: false
+        type: boolean
+        default: true
       python-version:
         required: true
         type: string
@@ -62,3 +66,20 @@ jobs:
           ${{ inputs.build-tool }} run ruff format --check ${{ inputs.context-path }}
           ${{ inputs.build-tool }} run ruff check ${{ inputs.context-path }}
           ${{ inputs.build-tool }} run mypy ${{ inputs.context-path }}
+
+  poetry-check:
+    runs-on: ubuntu-24.04
+    if: inputs.build-tool == 'poetry'
+    container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
+    env:
+      # renovate: datasource=pypi depName=pipx
+      PIPX_VERSION: "==1.7.*"
+      # renovate: datasource=pypi depName=poetry versioning=semver-coerced
+      POETRY_VERSION: "2.0.1"
+    steps:
+      - run: |
+          pip install "pipx${PIPX_VERSION}"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - run: pipx install poetry==${{ inputs.build-tool-version || env.POETRY_VERSION }}
+      - uses: actions/checkout@v4
+      - run: poetry check --strict ${{ (inputs.check-lockfile-exists && '--lock') || '' }}
