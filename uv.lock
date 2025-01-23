@@ -3,7 +3,7 @@ requires-python = "==3.13.*"
 
 [[package]]
 name = "actions-python"
-version = "4.0.0"
+version = "5.0.4"
 source = { virtual = "." }
 dependencies = [
     { name = "commitizen" },
