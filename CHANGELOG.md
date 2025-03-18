@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.2.5 (2025-03-18)
+
+### Fix
+
+- **deps**: update dependency uv to v0.6.8
+
 ## v5.2.4 (2025-03-18)
 
 ### Fix
