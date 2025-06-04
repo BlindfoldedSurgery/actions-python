@@ -35,6 +35,9 @@ on:
         type: string
         default: src/
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-24.04
