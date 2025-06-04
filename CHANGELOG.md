@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.4.0 (2025-06-04)
+
+### Feat
+
+- declare required permissions for each workflow
+- **lint**: add support for pyright
+
 ## v5.3.9 (2025-06-04)
 
 ### Fix
