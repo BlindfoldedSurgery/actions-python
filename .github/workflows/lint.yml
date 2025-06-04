@@ -22,6 +22,10 @@ on:
       python-version:
         required: true
         type: string
+      type-checker:
+        type: string
+        required: false
+        default: mypy
       debian-version:
         required: false
         type: string
@@ -65,7 +69,7 @@ jobs:
         run: |
           ${{ inputs.build-tool }} run ruff format --check ${{ inputs.context-path }}
           ${{ inputs.build-tool }} run ruff check ${{ inputs.context-path }}
-          ${{ inputs.build-tool }} run mypy ${{ inputs.context-path }}
+          ${{ inputs.build-tool }} run ${{ inputs.type-checker }} ${{ inputs.context-path }}
 
   poetry-check:
     runs-on: ubuntu-24.04
