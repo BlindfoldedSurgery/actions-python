@@ -48,7 +48,7 @@ jobs:
       # renovate: datasource=pypi depName=poetry versioning=semver-coerced
       POETRY_VERSION: "2.1.3"
       # renovate: datasource=pypi depName=uv versioning=semver-coerced
-      UV_VERSION: "0.8.3"
+      UV_VERSION: "0.8.5"
     steps:
       - run: |
           pip install "pipx${PIPX_VERSION}"
