@@ -112,7 +112,7 @@ jobs:
     needs: [ test ]
     if: inputs.submit-coverage
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: test-coverage
       - name: Upload coverage reports to Codecov
