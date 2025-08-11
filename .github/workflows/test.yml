@@ -60,7 +60,7 @@ jobs:
         if: inputs.build-tool == 'poetry'
       - run: pipx install poetry==${{ inputs.build-tool-version || env.POETRY_VERSION }}
         if: inputs.build-tool == 'poetry'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install uv
         if: inputs.build-tool == 'uv'
         uses: astral-sh/setup-uv@v6
