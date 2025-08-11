@@ -56,7 +56,7 @@ jobs:
         if: inputs.build-tool == 'poetry'
       - run: pipx install poetry==${{ inputs.build-tool-version || env.POETRY_VERSION }}
         if: inputs.build-tool == 'poetry'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install uv
         if: inputs.build-tool == 'uv'
         uses: astral-sh/setup-uv@v6
@@ -88,5 +88,5 @@ jobs:
           pip install "pipx${PIPX_VERSION}"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - run: pipx install poetry==${{ inputs.build-tool-version || env.POETRY_VERSION }}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: poetry check --strict ${{ (inputs.check-lockfile-exists && '--lock') || '' }}
