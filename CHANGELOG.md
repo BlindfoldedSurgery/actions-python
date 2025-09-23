@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.5.17 (2025-09-23)
+
+### Fix
+
+- don't use broken GHA deprecation
+
 ## v5.5.16 (2025-09-23)
 
 ### Fix
