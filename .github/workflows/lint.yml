@@ -23,7 +23,6 @@ on:
         required: true
         type: string
       type-checker:
-        deprecationMessage: "The type-checker parameter is deprecated. Use mypy or nothing."
         type: string
         required: false
         default: mypy
@@ -69,6 +68,15 @@ jobs:
         if: inputs.build-tool == 'poetry'
       - run: uv sync --all-extras
         if: inputs.build-tool == 'uv'
+      - name: Print deprecation warning
+        if: inputs.type-checker != 'mypy'
+        env:
+          WARNING_TEXT: |
+            ## Deprecation warning
+            
+            The type-checker parameter is deprecated. Use mypy or nothing.
+        run: |
+          echo "$WARNING_TEXT" >> "$GITHUB_STEP_SUMMARY"
       - name: Check coding standards
         run: |
           ${{ inputs.build-tool }} run ruff format --check ${{ inputs.context-path }}
