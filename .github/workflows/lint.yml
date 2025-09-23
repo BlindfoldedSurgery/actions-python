@@ -23,6 +23,7 @@ on:
         required: true
         type: string
       type-checker:
+        deprecationMessage: "The type-checker parameter is deprecated. Use mypy or nothing."
         type: string
         required: false
         default: mypy
