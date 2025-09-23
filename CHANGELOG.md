@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.5.16 (2025-09-23)
+
+### Fix
+
+- deprecate pyright support
+
 ## v5.5.15 (2025-09-10)
 
 ### Fix
