@@ -1,7 +1,7 @@
 [project]
 name = "actions-python"
 description = "GitHub Actions Workflows for Python"
-version = "5.5.17"
+version = "5.5.18"
 authors = [
     { email = "team@blindfolded.surgery", name = "BlindfoldedSurgery" }
 ]
