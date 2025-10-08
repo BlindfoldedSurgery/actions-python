@@ -42,7 +42,7 @@ jobs:
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     env:
       # renovate: datasource=pypi depName=pipx
-      PIPX_VERSION: "==1.7.*"
+      PIPX_VERSION: "==1.8.*"
       # renovate: datasource=pypi depName=poetry versioning=semver-coerced
       POETRY_VERSION: "2.1.4"
       # renovate: datasource=pypi depName=uv versioning=semver-coerced
