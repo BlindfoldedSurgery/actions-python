@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.6.0 (2025-10-08)
+
+### Feat
+
+- **deps**: update dependency uv to v0.9.0
+- **deps**: update dependency poetry to v2.2.1
+
 ## v5.5.18 (2025-10-08)
 
 ### Fix
