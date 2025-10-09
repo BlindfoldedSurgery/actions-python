@@ -76,7 +76,7 @@ jobs:
             
             The type-checker parameter is deprecated. Use mypy or nothing.
         run: |
-          echo "$WARNING_TEXT" >> "$GITHUB_STEP_SUMMARY"
+          printenv WARNING_TEXT >> "$GITHUB_STEP_SUMMARY"
       - name: Check coding standards
         run: |
           ${{ inputs.build-tool }} run ruff format --check ${{ inputs.context-path }}
