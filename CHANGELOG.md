@@ -1,5 +1,13 @@
 # Changelog
 
+## v6.0.0 (2025-10-23)
+
+### BREAKING CHANGE
+
+- The test workflow now relies on pytest's default
+test discovery behavior. The tests-location input is optional but has
+no default value anymore.
+
 ## v5.6.5 (2025-10-21)
 
 ### Fix
