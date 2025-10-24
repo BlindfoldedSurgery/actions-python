@@ -100,7 +100,7 @@ jobs:
         run: ${{ inputs.build-tool }} run coverage xml
       - name: Store coverage artifact
         if: inputs.submit-coverage
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: test-coverage
           path: ./coverage.xml
@@ -111,7 +111,7 @@ jobs:
     needs: [ test ]
     if: inputs.submit-coverage
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: test-coverage
       - name: Upload coverage reports to Codecov
