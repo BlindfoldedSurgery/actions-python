@@ -94,7 +94,7 @@ jobs:
             fi
           done <<< "$INPUT_VARS"
       - name: Run tests
-        run: ${{ inputs.build-tool }} run pytest ${{ inputs.tests-selector && format('-m "{0}"', inputs.tests-selector) || '' }} ${{ inputs.submit-coverage && '--cov' || '' }} ${{ inputs.tests-location }}
+        run: ${{ inputs.build-tool }} run pytest ${{ inputs.tests-selector && format('-m "{0}"', inputs.tests-selector) || '' }} ${{ inputs.submit-coverage && '--cov --junitxml=junit.xml' || '' }} ${{ inputs.tests-location }}
       - name: Convert Python coverage file format to XML
         if: inputs.submit-coverage
         run: ${{ inputs.build-tool }} run coverage xml
@@ -103,7 +103,9 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: test-coverage
-          path: ./coverage.xml
+          path: |
+            ./coverage.xml
+            ./junit.xml
           overwrite: true
 
   upload-coverage-report:
@@ -111,6 +113,7 @@ jobs:
     needs: [ test ]
     if: inputs.submit-coverage
     steps:
+      - uses: actions/checkout@v5
       - uses: actions/download-artifact@v6
         with:
           name: test-coverage
@@ -118,4 +121,13 @@ jobs:
         uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          disable_search: true
+          fail_ci_if_error: true
           files: ./coverage.xml
+      - name: Upload test results to Codecov
+        uses: codecov/test-results-action@47f89e9acb64b76debcd5ea40642d25a4adced9f # v1.1.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          disable_search: true
+          fail_ci_if_error: true
+          files: ./junit.xml
