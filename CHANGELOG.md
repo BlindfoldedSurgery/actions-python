@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.1.0 (2025-10-25)
+
+### Feat
+
+- upload test results to Codecov
+
 ## v6.0.1 (2025-10-25)
 
 ### Fix
