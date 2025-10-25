@@ -25,6 +25,27 @@
         "patch"
       ],
       "semanticCommitType": "fix"
+    },
+    {
+      "matchCategories": [
+        "ci"
+      ],
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor"
+      ],
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchCategories": [
+        "ci"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "semanticCommitType": "fix!",
+      "semanticCommitScope": null
     }
   ]
 }
