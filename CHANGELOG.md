@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.1 (2025-10-25)
+
+### Fix
+
+- pin codecov action
+
 ## v6.0.0 (2025-10-23)
 
 ### BREAKING CHANGE
