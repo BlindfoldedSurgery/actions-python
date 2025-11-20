@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.0 (2025-11-20)
+
+### Fix
+
+- update actions/checkout action to v6
+
 ## v6.1.5 (2025-11-17)
 
 ### Fix
