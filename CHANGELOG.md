@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.0 (2025-12-13)
+
+### Fix
+
+- update artifact actions
+
 ## v7.0.8 (2025-12-11)
 
 ### Fix
