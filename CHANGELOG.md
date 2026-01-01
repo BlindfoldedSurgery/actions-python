@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.5 (2026-01-01)
+
+### Fix
+
+- **deps**: update codecov/test-results-action action to v1.2.1
+
 ## v8.0.4 (2025-12-30)
 
 ### Fix
