@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.6 (2026-01-01)
+
+### Fix
+
+- replace deprecated codecov action
+
 ## v8.0.5 (2026-01-01)
 
 ### Fix
