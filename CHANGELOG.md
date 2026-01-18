@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.0 (2026-01-18)
+
+### Feat
+
+- **deps**: update dependency poetry to v2.3.0
+
 ## v8.0.11 (2026-01-15)
 
 ### Fix
