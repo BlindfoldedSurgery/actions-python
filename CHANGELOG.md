@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.2.2 (2026-02-10)
+
+### Fix
+
+- **deps**: update dependency uv to v0.10.2
+
 ## v8.2.1 (2026-02-10)
 
 ### Fix
