@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.0 (2026-02-27)
+
+### Fix
+
+- update artifact actions
+
 ## v8.2.6 (2026-02-25)
 
 ### Fix
