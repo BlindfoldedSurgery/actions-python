@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.4 (2026-03-14)
+
+### Fix
+
+- **deps**: update dependency uv to v0.10.10
+
 ## v9.0.3 (2026-03-06)
 
 ### Fix
