@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.6 (2026-03-18)
+
+### Fix
+
+- **deps**: update codecov/codecov-action action to v5.5.3
+
 ## v9.0.5 (2026-03-17)
 
 ### Fix
