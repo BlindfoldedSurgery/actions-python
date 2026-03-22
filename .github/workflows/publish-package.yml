@@ -1,10 +1,6 @@
 on:
   workflow_call:
     inputs:
-      build-tool:
-        type: string
-        required: false
-        default: poetry
       build-tool-version:
         type: string
         required: false
@@ -41,42 +37,21 @@ jobs:
     runs-on: ubuntu-24.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     env:
-      # renovate: datasource=pypi depName=pipx
-      PIPX_VERSION: "==1.10.*"
-      # renovate: datasource=pypi depName=poetry versioning=semver-coerced
-      POETRY_VERSION: "2.3.2"
       # renovate: datasource=pypi depName=uv versioning=semver-coerced
       UV_VERSION: "0.10.12"
     steps:
-      - run: |
-          pip install "pipx${PIPX_VERSION}"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-        if: inputs.build-tool == 'poetry'
-      - run: pipx install poetry==${{ inputs.build-tool-version || env.POETRY_VERSION }}
-        if: inputs.build-tool == 'poetry'
       - uses: actions/checkout@v6
       - name: Install uv
-        if: inputs.build-tool == 'uv'
         uses: astral-sh/setup-uv@v7
         with:
           cache-suffix: ${{ inputs.cache-key-suffix }}
           enable-cache: ${{ inputs.cache-enabled }}
           version: ${{ inputs.build-tool-version || env.UV_VERSION }}
-      - run: poetry install --all-extras --no-interaction --no-ansi
-        if: inputs.build-tool == 'poetry'
-      - run: uv sync --all-extras
-        if: inputs.build-tool == 'uv'
+      - name: Sync dependencies
+        run: uv sync --all-extras
       - name: Build project
-        run: ${{ inputs.build-tool }} build
+        run: uv build
       - name: Upload to pypi registry
-        if: inputs.build-tool == 'poetry'
-        run: |
-          poetry config "http-basic.${{ inputs.repo-name }}" \
-          "${{ inputs.pypi-username }}" \
-          "${{ secrets.pypi-password }}"
-          poetry publish -r ${{ inputs.repo-name }}
-      - name: Upload to pypi registry
-        if: inputs.build-tool == 'uv'
         env:
           UV_PUBLISH_USERNAME: ${{ inputs.pypi-username }}
           UV_PUBLISH_PASSWORD: ${{ secrets.pypi-password }}

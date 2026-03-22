@@ -7,7 +7,6 @@
   "packageRules": [
     {
       "matchDepNames": [
-        "poetry",
         "uv"
       ],
       "matchUpdateTypes": [
@@ -18,7 +17,6 @@
     },
     {
       "matchDepNames": [
-        "poetry",
         "uv"
       ],
       "matchUpdateTypes": [
