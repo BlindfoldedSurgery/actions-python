@@ -21,10 +21,6 @@ on:
       pypi-username:
         required: true
         type: string
-      repo-name:
-        required: false
-        type: string
-        default: pypi-bs
     secrets:
       pypi-password:
         required: true
