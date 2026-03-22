@@ -76,7 +76,6 @@ Build a package using uv and publish it to a custom repository.
 | cache-key-suffix |    no    |            |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
 | debian-version   |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container                      |
 | pypi-username    |   yes    |            | `mycoolusername` | The username for your custom pypi repository.                  |
-| repo-name        |    no    | `pypi-bs`  |                  | The repo name as configured in your project's `poetry.toml`.   |
 
 **Secrets:**
 
