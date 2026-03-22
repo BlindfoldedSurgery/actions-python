@@ -2,7 +2,8 @@
 
 This repository contains a set of reusable workflows geared towards Python projects using uv.
 
-The project follows semantic versioning. You can depend on tags for specific versions (e.g. `v1.0.0`, `v3.1.3`)
+The project follows semantic versioning. You can depend on tags for specific versions (e.g.
+`v1.0.0`, `v3.1.3`)
 or a major version tag (e.g. `v1`, `v3`).
 
 Every commit on the main branch leads to a new release. Releases are managed by
@@ -32,13 +33,13 @@ Lints an uv project using ruff and mypy.
 
 **Inputs:**
 
-| Name           | Required |  Default   |     Example      | Description                                        |
-|:---------------|:--------:|:----------:|:----------------:|----------------------------------------------------|
-| python-version |   yes    |            |      `3.14`      | The Python version to use                          |
-| cache-enabled    |    no    |   `true`   | `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache |
-| cache-key-suffix |    no    |            |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
-| debian-version |    no    | `trixie` |    `bookworm`    | The Debian version name for the container          |
-| context-path   |    no    |   `src/`   | `.`/`mypackage/` | The path that is passed to linting tools to check. |
+| Name             | Required | Default  |     Example      | Description                                                    |
+|:-----------------|:--------:|:--------:|:----------------:|----------------------------------------------------------------|
+| python-version   |   yes    |          |      `3.14`      | The Python version to use                                      |
+| cache-enabled    |    no    |  `true`  | `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache |
+| cache-key-suffix |    no    |          |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
+| debian-version   |    no    | `trixie` |    `bookworm`    | The Debian version name for the container                      |
+| context-path     |    no    |  `src/`  | `.`/`mypackage/` | The path that is passed to linting tools to check.             |
 
 ### test
 
@@ -47,15 +48,15 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 
 **Inputs:**
 
-| Name            | Required | Default  |      Example      | Description                                                                                   |
-|:----------------|:--------:|:--------:|:-----------------:|-----------------------------------------------------------------------------------------------|
-| python-version  |   yes    |          |      `3.11`       | The Python version to use                                                                     |
-| cache-enabled    |    no    |  `true`  | `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache |
-| cache-key-suffix |    no    |          |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
-| debian-version  |    no    | `trixie` |    `bookworm`     | The Debian version name for the container                                                     |
-| submit-coverage |    no    | `false`  |  `true`/`false`   | Whether to collect and submit the coverage report. Requires the CODECOV_TOKEN secret as well. |
-| tests-location  |    no    |  `src/`  |     `tests/`      | The path to your tests that is used for the pytest invocation.                                |
-| tests-selector  |    no    |          | `not integration` | A pytest marker selection expression                                                          |
+| Name             | Required | Default  |      Example      | Description                                                                                   |
+|:-----------------|:--------:|:--------:|:-----------------:|-----------------------------------------------------------------------------------------------|
+| python-version   |   yes    |          |      `3.11`       | The Python version to use                                                                     |
+| cache-enabled    |    no    |  `true`  |  `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache                                |
+| cache-key-suffix |    no    |          |  `-somevariant`   | A suffix for the GitHub Actions cache key                                                     |
+| debian-version   |    no    | `trixie` |    `bookworm`     | The Debian version name for the container                                                     |
+| submit-coverage  |    no    | `false`  |  `true`/`false`   | Whether to collect and submit the coverage report. Requires the CODECOV_TOKEN secret as well. |
+| tests-location   |    no    |  `src/`  |     `tests/`      | The path to your tests that is used for the pytest invocation.                                |
+| tests-selector   |    no    |          | `not integration` | A pytest marker selection expression                                                          |
 
 **Secrets:**
 
@@ -69,13 +70,13 @@ Build a package using uv and publish it to a custom repository.
 
 **Inputs:**
 
-| Name             | Required |  Default   |     Example      | Description                                                    |
-|:-----------------|:--------:|:----------:|:----------------:|----------------------------------------------------------------|
-| python-version   |   yes    |            |      `3.11`      | The Python version to use                                      |
-| cache-enabled    |    no    |   `true`   | `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache |
-| cache-key-suffix |    no    |            |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
+| Name             | Required | Default  |     Example      | Description                                                    |
+|:-----------------|:--------:|:--------:|:----------------:|----------------------------------------------------------------|
+| python-version   |   yes    |          |      `3.11`      | The Python version to use                                      |
+| cache-enabled    |    no    |  `true`  | `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache |
+| cache-key-suffix |    no    |          |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
 | debian-version   |    no    | `trixie` |    `bookworm`    | The Debian version name for the container                      |
-| pypi-username    |   yes    |            | `mycoolusername` | The username for your custom pypi repository.                  |
+| pypi-username    |   yes    |          | `mycoolusername` | The username for your custom pypi repository.                  |
 
 **Secrets:**
 
