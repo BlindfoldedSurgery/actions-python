@@ -1,6 +1,6 @@
 # actions-python
 
-This repository contains a set of reusable workflows geared towards Python projects using Poetry or uv.
+This repository contains a set of reusable workflows geared towards Python projects using uv.
 
 The project follows semantic versioning. You can depend on tags for specific versions (e.g. `v1.0.0`, `v3.1.3`)
 or a major version tag (e.g. `v1`, `v3`).
@@ -19,7 +19,7 @@ accidentally create commits with an unconventional message, install a pre-commit
 ```yaml
 jobs:
   lint:
-    uses: BlindfoldedSurgery/actions-python/.github/workflows/lint.yml@v1
+    uses: BlindfoldedSurgery/actions-python/.github/workflows/lint.yml@v10
     with:
       python-version: '3.13'
 ```
@@ -28,18 +28,17 @@ jobs:
 
 ### lint
 
-Lints a Poetry project using ruff and mypy.
+Lints a uv project using ruff and mypy.
 
 **Inputs:**
 
 | Name           | Required |  Default   |     Example      | Description                                        |
 |:---------------|:--------:|:----------:|:----------------:|----------------------------------------------------|
-| python-version |   yes    |            |      `3.11`      | The Python version to use                          |
+| python-version |   yes    |            |      `3.14`      | The Python version to use                          |
 | cache-enabled    |    no    |   `true`   | `true`, `false`  | Whether read/write cached dependencies to GitHub Actions cache |
 | cache-key-suffix |    no    |            |  `-somevariant`  | A suffix for the GitHub Actions cache key                      |
 | debian-version |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container          |
 | context-path   |    no    |   `src/`   | `.`/`mypackage/` | The path that is passed to linting tools to check. |
-| build-tool     |    no    |  `poetry`  |  `poetry`, `uv`  | The build/packaging tool to use for the project.   |
 
 ### test
 
@@ -57,7 +56,6 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 | submit-coverage |    no    |  `false`   |  `true`/`false`   | Whether to collect and submit the coverage report. Requires the CODECOV_TOKEN secret as well. |
 | tests-location  |    no    |   `src/`   |     `tests/`      | The path to your tests that is used for the pytest invocation.                                |
 | tests-selector  |    no    |            | `not integration` | A pytest marker selection expression                                                          |
-| build-tool      |    no    |  `poetry`  |  `poetry`, `uv`   | The build/packaging tool to use for the project.                                              |
 
 **Secrets:**
 
@@ -67,14 +65,7 @@ Runs unit tests for a project using pytest. Optionally collects and submits cove
 
 ### publish-package
 
-Build a package using Poetry and publish it to a custom repository.
-
-Example `poetry.toml`:
-
-```toml
-[repositories.pypi-bs]
-url = " https://pypi.blindfolded.surgery/"
-```
+Build a package using uv and publish it to a custom repository.
 
 **Inputs:**
 
@@ -86,7 +77,6 @@ url = " https://pypi.blindfolded.surgery/"
 | debian-version   |    no    | `bookworm` |    `bullseye`    | The Debian version name for the container                      |
 | pypi-username    |   yes    |            | `mycoolusername` | The username for your custom pypi repository.                  |
 | repo-name        |    no    | `pypi-bs`  |                  | The repo name as configured in your project's `poetry.toml`.   |
-| build-tool       |    no    |  `poetry`  |  `poetry`, `uv`  | The build/packaging tool to use for the project.               |
 
 **Secrets:**
 
