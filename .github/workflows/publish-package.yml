@@ -17,7 +17,7 @@ on:
       debian-version:
         required: false
         type: string
-        default: bookworm
+        default: trixie
       pypi-username:
         required: true
         type: string
