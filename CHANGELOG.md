@@ -1,5 +1,15 @@
 # Changelog
 
+## v10.0.0 (2026-03-22)
+
+### BREAKING CHANGE
+
+- Poetry is no longer supported and the build-tool input has been removed
+
+
+- change default debian version to trixie
+- remove repo-name input from publish-package workflow
+
 ## v9.0.7 (2026-03-20)
 
 ### Fix
