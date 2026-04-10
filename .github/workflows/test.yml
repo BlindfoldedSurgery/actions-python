@@ -43,7 +43,7 @@ jobs:
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     env:
       # renovate: datasource=pypi depName=uv versioning=semver-coerced
-      UV_VERSION: "0.11.3"
+      UV_VERSION: "0.11.6"
     steps:
       - uses: actions/checkout@v6
       - name: Install uv
