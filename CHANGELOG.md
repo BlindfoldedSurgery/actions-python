@@ -1,5 +1,11 @@
 # Changelog
 
+## v11.0.1 (2026-04-10)
+
+### Fix
+
+- **deps**: update dependency uv to v0.11.6 [security]
+
 ## v11.0.0 (2026-04-10)
 
 ### Fix
