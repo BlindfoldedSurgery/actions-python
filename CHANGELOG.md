@@ -1,5 +1,12 @@
 # Changelog
 
+## v12.0.0 (2026-04-16)
+
+### Fix
+
+- pin all third-party actions
+- update astral-sh/setup-uv action to v8
+
 ## v11.0.2 (2026-04-16)
 
 ### Fix
