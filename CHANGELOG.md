@@ -1,5 +1,11 @@
 # Changelog
 
+## v12.0.3 (2026-04-23)
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4.6.0
+
 ## v12.0.2 (2026-04-17)
 
 ### Fix
