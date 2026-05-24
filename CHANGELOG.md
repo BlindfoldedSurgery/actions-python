@@ -1,5 +1,11 @@
 # Changelog
 
+## v12.0.7 (2026-05-24)
+
+### Fix
+
+- **deps**: update codecov/codecov-action action to v6.0.1
+
 ## v12.0.6 (2026-05-24)
 
 ### Fix
