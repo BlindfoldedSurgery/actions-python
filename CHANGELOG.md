@@ -1,5 +1,11 @@
 # Changelog
 
+## v13.0.0 (2026-06-07)
+
+### Fix
+
+- update codecov/codecov-action action to v7
+
 ## v12.0.11 (2026-06-05)
 
 ### Fix
