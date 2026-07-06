@@ -1,5 +1,11 @@
 # Changelog
 
+## v13.0.6 (2026-07-06)
+
+### Fix
+
+- **deps**: update astral-sh/setup-uv action to v8.3.0
+
 ## v13.0.5 (2026-07-02)
 
 ### Fix
