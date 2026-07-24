@@ -1,5 +1,12 @@
 # Changelog
 
+## v14.0.0
+
+### Fix
+
+- update astral-sh/setup-uv action to v9
+- **deps**: update dependency uv to v0.11.32
+
 ## v13.0.11 (2026-07-24)
 
 ### Fix
