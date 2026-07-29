@@ -1,5 +1,11 @@
 # Changelog
 
+## v14.1.0 (2026-07-29)
+
+### Feat
+
+- **deps**: update dependency uv to v0.12.0
+
 ## v14.0.0 (2026-07-24)
 
 ### Fix
