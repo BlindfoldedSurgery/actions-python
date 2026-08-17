@@ -1,5 +1,11 @@
 # Changelog
 
+## v15.0.0 (2026-08-17)
+
+### Fix
+
+- update astral-sh/setup-uv action to v10
+
 ## v14.1.3 (2026-08-17)
 
 ### Fix
