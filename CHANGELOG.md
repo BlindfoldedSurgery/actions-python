@@ -1,5 +1,12 @@
 # Changelog
 
+## v15.0.7 (2026-09-26)
+
+### Fix
+
+- **deps**: update astral-sh/setup-uv action to v10.2.0
+- **deps**: update codecov/codecov-action action to v7.1.1
+
 ## v15.0.6 (2026-09-26)
 
 ### Fix
