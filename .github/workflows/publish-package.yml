@@ -30,7 +30,7 @@ permissions:
 
 jobs:
   publish-package:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     container: python:${{ inputs.python-version }}-slim-${{ inputs.debian-version }}
     env:
       # renovate: datasource=pypi depName=uv versioning=semver-coerced
