@@ -1,5 +1,11 @@
 # Changelog
 
+## v16.0.0 (2026-10-02)
+
+### Fix
+
+- update blindfoldedsurgery/actions-releases action to v6
+
 ## v15.0.9 (2026-10-02)
 
 ### Fix
