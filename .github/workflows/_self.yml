@@ -18,13 +18,13 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v5
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v6
     with:
       build-tool: uv
       python-version: "3.14"
 
   bump:
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v5
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v6
     permissions:
       contents: write
       pull-requests: write
