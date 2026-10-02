@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.0.0 (2026-10-02)
+
+### Fix
+
+- update dependency ubuntu to v26
+
 ## v16.0.0 (2026-10-02)
 
 ### Fix
