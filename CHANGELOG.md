@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.0.2 (2026-10-09)
+
+### Fix
+
+- **deps**: update artifact actions
+
 ## v17.0.1 (2026-10-05)
 
 ### Fix
