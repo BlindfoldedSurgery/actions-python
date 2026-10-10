@@ -1,5 +1,15 @@
 # Changelog
 
+## v17.1.0 (2026-10-10)
+
+### Feat
+
+- **deps**: update dependency uv to v0.13.0
+
+### Fix
+
+- **deps**: update astral-sh/setup-uv action to v10.3.0
+
 ## v17.0.3 (2026-10-09)
 
 ### Fix
