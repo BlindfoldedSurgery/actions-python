@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.1.1 (2026-10-10)
+
+### Fix
+
+- update actions/checkout action to v7
+
 ## v17.1.0 (2026-10-10)
 
 ### Feat
