@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.1.2 (2026-10-16)
+
+### Fix
+
+- **deps**: update dependency uv to v0.13.1
+
 ## v17.1.1 (2026-10-10)
 
 ### Fix
