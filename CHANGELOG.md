@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.1.3 (2026-10-16)
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4.7.0
+
 ## v17.1.2 (2026-10-16)
 
 ### Fix
