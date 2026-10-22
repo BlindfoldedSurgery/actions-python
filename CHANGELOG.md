@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.1.5 (2026-10-22)
+
+### Fix
+
+- **deps**: update astral-sh/setup-uv action to v10.3.2
+
 ## v17.1.4 (2026-10-21)
 
 ### Fix
